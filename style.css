@@ -71,6 +71,18 @@ i {
   padding: 40px;
 }
 
+.icon > i.color-lightcoral {
+  color: lightcoral;
+}
+
+.icon > i.color-green {
+  color: green;
+}
+
+.icon > i.color-brown {
+  color: brown;
+}
+
 p::before {
   content: '\f101';
   margin-right: 20px;

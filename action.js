@@ -114,43 +114,16 @@ $(document).ready(function() {
   ];
   console.log('The array of icons is:' , icons_list);
 
-  // -------------------- Milestone 1 - Printing on screen --------------------
+  // -------------------- Milestone 2 - Colors & types --------------------
 
-  // Scanning the array of icons
-  icons_list.forEach((icon) => {
-
-    // *********** SOLUTION 1 - DESTRUCTURING ***********
-    // Destructuring the icons' properties
-    const {name, prefix, type, family} = icon;
-    // Printing output using the new variables created through destructuring
-    $('#icons-container').append(`
-      <div class="icon">
-        <i class="${family} ${prefix}${name}"></i>
-        <h2>${name}</h2>
-      </div>
-    `);
-    /*
-    // *********** SOLUTION 2 - DOT NOTATION ***********
-    // Printing output without destructuring the objects (dot notation)
-    $('#icons-container').append(`
-      <div class="icon">
-        <i class="${icon.family} ${icon.prefix}${icon.name}"></i>
-        <h2>${icon.name}</h2>
-      <div>
-    `);
-    */
-  });
-
-  // -------------------- Milestone 2 - Colors --------------------
-
-  // Creating array of colors (length of this aerray must be the same as the number of the different icon types)
-  const colors_list = ['lightcoral', 'green', 'purple'];
+  // Creating array of colors (length of this array must be the same as the number of the different icon types)
+  const colors_list = ['lightcoral', 'green', 'brown'];
   console.log('The array of colors is:' , colors_list);
-  // Creating array of types (lenght of this array must be the same as the number of colors)
+  // Creating array of types (length of this array must be the same as the number of colors)
   let types_list = [];
   // Scanning the array of icons to check the types
   icons_list.forEach((icon) => {
-    const {type} = icon;
+    const {type} = icon; // --> with destructuring
     /*
     const type = icon.type; // --> with dot notation (without destructuring)
     */
@@ -159,4 +132,40 @@ $(document).ready(function() {
     }
   });
   console.log('The array of types is:' , types_list);
+
+  // -------------------- Milestone 1 - Printing on screen --------------------
+
+  // Scanning the array of icons
+  icons_list.forEach((icon) => {
+
+    // *********** SOLUTION 1 - DESTRUCTURING ***********
+    // Destructuring the icons' properties
+    const {name, prefix, type, family} = icon;
+    // Finding the index of the type of the current icon (in the array of types)
+    let type_index = types_list.indexOf(type);
+    // Finding the corresponding color (same index as type index)
+    let icon_color = colors_list[type_index];
+    // Printing output using the new variables created through destructuring
+    $('#icons-container').append(`
+      <div class="icon">
+        <i class="${family} ${prefix}${name} color-${icon_color}"></i>
+        <h2>${name}</h2>
+      </div>
+    `);
+
+    /*
+    // *********** SOLUTION 2 - DOT NOTATION ***********
+    // Finding the index of the type of the current icon (in the array of types)
+    let type_index = types_list.indexOf(icon.type);
+    // Finding the corresponding color (same index as type index)
+    let icon_color = colors_list[type_index];
+    // Printing output without destructuring the objects (dot notation)
+    $('#icons-container').append(`
+      <div class="icon">
+        <i class="${icon.family} ${icon.prefix}${icon.name} color-${icon_color}"></i>
+        <h2>${icon.name}</h2>
+      <div>
+    `);
+    */
+  });
 });
