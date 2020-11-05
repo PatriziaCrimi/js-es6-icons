@@ -19,6 +19,14 @@ h1 {
   text-shadow: 3px 3px #D8CEF6;
 }
 
+h2 {
+  font-weight: 400;
+  font-size: 20px;
+  color: #D8CEF6;
+  text-shadow: 2px 2px #4B088A;
+  padding-top: 5px;
+}
+
 p {
   font-size: 30px;
   font-weight: 700;
@@ -29,9 +37,13 @@ span {
   font-weight: 600;
 }
 
+i {
+  font-size: 30px;
+}
+
 #page-wrapper {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: rgb(28,53,213);
   background: linear-gradient(0deg, rgba(28,53,213,1) 0%, rgba(47,184,203,1) 80%);
 }
@@ -46,6 +58,17 @@ span {
 }
 
 /* Elements */
+
+#icons-container {
+  border: 2px solid #4B088A;
+  border-radius: 10px;
+  box-shadow: 1px 1px #BCA9F5;
+}
+
+#icons-container > .icon {
+  display:inline-block;
+  padding: 40px;
+}
 
 p::before {
   content: '\f101';
@@ -89,6 +112,15 @@ p:hover::after {
 
   h1 {
     font-size: 60px;
+  }
+
+  h2 {
+    font-size: 30px;
+    padding-top: 15px;
+  }
+
+  i {
+    font-size: 40px;
   }
 }
 

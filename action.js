@@ -119,13 +119,19 @@ $(document).ready(function() {
     const {name, prefix, type, family} = icon;
     // Printing output using the new variables created through destructuring
     $('#icons-container').append(`
-      <i class="${family} ${prefix}${name}"></i>
+      <div class="icon">
+        <i class="${family} ${prefix}${name}"></i>
+        <h2>${name}</h2>
+      </div>
     `);
     /*
     // *********** SOLUTION 2 - DOT NOTATION ***********
     // Printing output without destructuring the objects (dot notation)
     $('#icons-container').append(`
-      <i class="${icon.family} ${icon.prefix}${icon.name}"></i>
+      <div class="icon">
+        <i class="${icon.family} ${icon.prefix}${icon.name}"></i>
+        <h2>${icon.name}</h2>
+      <div>
     `);
     */
   });
