@@ -113,9 +113,20 @@ $(document).ready(function() {
 
   // Scanning the array of icons
   icons_list.forEach((icon) => {
-    $('#icons-container').append(`
-      <div class="${icon.family} ${icon.prefix}${icon.name}"></div>
-    `);
-  });
 
+    // *********** SOLUTION 1 - DESTRUCTURING ***********
+    // Destructuring the icons' properties
+    const {name, prefix, type, family} = icon;
+    // Printing output using the new variables created through destructuring
+    $('#icons-container').append(`
+      <i class="${family} ${prefix}${name}"></i>
+    `);
+    /*
+    // *********** SOLUTION 2 - DOT NOTATION ***********
+    // Printing output without destructuring the objects (dot notation)
+    $('#icons-container').append(`
+      <i class="${icon.family} ${icon.prefix}${icon.name}"></i>
+    `);
+    */
+  });
 });
