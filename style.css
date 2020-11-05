@@ -63,6 +63,7 @@ i {
   border: 2px solid #4B088A;
   border-radius: 10px;
   box-shadow: 1px 1px #BCA9F5;
+  margin: 0 15px;
 }
 
 #icons-container > .icon {
@@ -101,6 +102,10 @@ p:hover::after {
 @media screen and (min-width: 576px) {
   .container {
     max-width: 540px;
+  }
+
+  #icons-container {
+    margin: 0;
   }
 }
 

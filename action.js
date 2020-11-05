@@ -1,10 +1,15 @@
 /* ASSIGNMENT
-Milestone 1
+Milestone 1.
 Definire un array di oggetti; ogni oggetto rappresenta un'icona,
 che è caratterizzata da un nome, prefisso, tipo e famiglia.
 Utilizzando la funzione forEach e il template literal,
 visualizzare in pagina tutte le icone
 con il proprio nome.
+
+Milestone 2.
+Definire un array di colori
+e associare ad ogni tipo di icona un colore.
+Visualizzare le icone di colore diverso in base al tipo.
 */
 
 $(document).ready(function() {
@@ -109,7 +114,7 @@ $(document).ready(function() {
   ];
   console.log('The array of icons is:' , icons_list);
 
-  // -------------------- Printing on screen the icons & names --------------------
+  // -------------------- Milestone 1 - Printing on screen --------------------
 
   // Scanning the array of icons
   icons_list.forEach((icon) => {
@@ -135,4 +140,23 @@ $(document).ready(function() {
     `);
     */
   });
+
+  // -------------------- Milestone 2 - Colors --------------------
+
+  // Creating array of colors (length of this aerray must be the same as the number of the different icon types)
+  const colors_list = ['lightcoral', 'green', 'purple'];
+  console.log('The array of colors is:' , colors_list);
+  // Creating array of types (lenght of this array must be the same as the number of colors)
+  let types_list = [];
+  // Scanning the array of icons to check the types
+  icons_list.forEach((icon) => {
+    const {type} = icon;
+    /*
+    const type = icon.type; // --> with dot notation (without destructuring)
+    */
+    if(!types_list.includes(type)) {
+      types_list.push(type);
+    }
+  });
+  console.log('The array of types is:' , types_list);
 });
