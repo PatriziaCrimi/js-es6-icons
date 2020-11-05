@@ -19,14 +19,6 @@ h1 {
   text-shadow: 3px 3px #D8CEF6;
 }
 
-h2 {
-  font-weight: 800;
-  padding: 50px 0;
-  font-size: 35px;
-  color: #D8CEF6;
-  text-shadow: 3px 3px #4B088A;
-}
-
 p {
   font-size: 30px;
   font-weight: 700;
@@ -97,10 +89,6 @@ p:hover::after {
 
   h1 {
     font-size: 60px;
-  }
-
-  h2 {
-    font-size: 40px;
   }
 }
 

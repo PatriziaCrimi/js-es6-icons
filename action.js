@@ -2,7 +2,9 @@
 Milestone 1
 Definire un array di oggetti; ogni oggetto rappresenta un'icona,
 che è caratterizzata da un nome, prefisso, tipo e famiglia.
-Utilizzando la funzione forEach e il template literal, visualizzare in pagina tutte le icone con il proprio nome.
+Utilizzando la funzione forEach e il template literal,
+visualizzare in pagina tutte le icone
+con il proprio nome.
 */
 
 $(document).ready(function() {
@@ -106,4 +108,14 @@ $(document).ready(function() {
     },
   ];
   console.log('The array of icons is:' , icons_list);
+
+  // -------------------- Printing on screen the icons & names --------------------
+
+  // Scanning the array of icons
+  icons_list.forEach((icon) => {
+    $('#icons-container').append(`
+      <div class="${icon.family} ${icon.prefix}${icon.name}"></div>
+    `);
+  });
+
 });
